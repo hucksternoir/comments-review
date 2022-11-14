@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+body {
+  background-color: #9df6f6;
+}
+
+p,
+h2 {
+  max-width: 40ch;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.caixa-review {
+  display: grid;
+  justify-items: center;
+  background-color: #fff;
+  max-width: 600px;
+  padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.btns-controles {
+  display: flex;
+  gap: 30px;
+}
+
+.btns-controles button {
+  padding: 10px;
+}
