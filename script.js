@@ -1,29 +1,39 @@
-const pessoas = [
+const pessoasComentario = [
   {
-    img: "imgs/imagem-2.jpg",
-    nomeEmpresa: "Facebook",
-    comentario:
-      "Adorei o serviço! Ele me proporciona exatamente tudo o que eu preciso.",
+    foto: "imgs/imagem-1.jpg",
+    empresa: "Facebook",
+    comentario: "Gostei muito",
   },
   {
-    img: "imgs/imagem-3.jpg",
-    nomeEmpresa: "Amazon",
-    comentario:
-      "Eles realmente sabem o que fazem. Todas as ferramentas necessárias para meu trabalho quebram um galho enorme!!",
+    foto: "imgs/imagem-2.jpg",
+    empresa: "Google",
+    comentario: "Gostei bastante",
   },
   {
-    img: "imgs/imagem-1.jpg",
-    nomeEmpresa: "Uber",
-    comentario:
-      "Este serviço facilita e muito o meu trabalho, pois consigo usar suas dezenas de ferramentas e features para melhorar a performance do meu trabalho e, consequentemente, me dando ótimos resultados",
+    foto: "imgs/imagem-3.jpg",
+    empresa: "Twitter",
+    comentario: "Gostei pakas",
   },
 ];
-
-function mudaProximo() {
-  document.querySelector("img").setAttribute("src", pessoas[1].img);
-  document.querySelector("h2").innerText = pessoas[1].nomeEmpresa;
-  document.querySelector("p").innerText = pessoas[1].comentario;
+let indexFoto = 1;
+let indexEmpresa = 1;
+let indexComent = 1;
+function proximo(event) {
+  console.log([indexFoto, indexComent, indexEmpresa]);
+  document
+    .querySelector(".imagem-review img")
+    .setAttribute("src", pessoasComentario[indexFoto++].foto);
+  document.querySelector(".empresa-nome").innerHTML =
+    pessoasComentario[indexEmpresa++].empresa;
+  document.querySelector(".comentario").innerHTML =
+    pessoasComentario[indexComent++].comentario;
+  if (indexFoto > 2) {
+    indexFoto = 0;
+    indexEmpresa = 0;
+    indexComent = 0;
+  }
 }
 
-const btnAvancar = document.querySelector("#proximo");
-btnAvancar.addEventListener("click", mudaProximo);
+const botao = document.querySelector("#proximo");
+
+botao.addEventListener("click", proximo);
